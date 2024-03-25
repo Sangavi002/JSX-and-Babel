@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+     let reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+     
+    //  Simple JSX Element
+     let simplePara =  <p>Seize the day</p>;
+    
+
+    //  Dynamic Content in JSX
+    let paraContent = "Seize the day";
+    let dynamicPara = <p>{paraContent}</p>;
+
+    // Conditional Rendering in JSX
+    let paraBoolean = true;
+    let conditionPara = paraBoolean ? simplePara : dynamicPara
+    
+    reactRoot.render(conditionPara)
+    
+    // Render multiple elements in react render
+    // reactRoot.render(
+    //     <>
+    //         {simplePara}
+    //         {dynamicPara}
+    //         {conditionPara}
+    //     </>
+    // )
+    </script>
+  </body>
+</html>
